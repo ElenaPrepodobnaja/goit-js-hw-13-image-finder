@@ -15,7 +15,7 @@ refs.form.addEventListener("submit", onImgSearch);
 function onImgSearch(e) {
   e.preventDefault();
 
-  apiImageService.query = e.currentTarget.elements.query.value;
+  apiImageService.query = e.currentTarget.elements.query.value.trim();
 
   if (apiImageService.query === "") {
     const errorMsg = document.querySelector(".pnotify");
