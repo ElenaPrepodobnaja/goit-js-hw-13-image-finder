@@ -56,20 +56,6 @@ function clearGallery() {
   refs.gallery.innerHTML = "";
 }
 
-function onLoadMoreBtnClick() {
-  fetchImages();
-
-  const options = {
-    top: null,
-    behavior: "smooth",
-  };
-
-  options.top = window.pageYOffset + document.documentElement.clientHeight;
-  setTimeout(() => {
-    window.scrollTo(options);
-  }, 1000);
-}
-
 const onEntry = (entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting && apiImageService.query !== "") {
